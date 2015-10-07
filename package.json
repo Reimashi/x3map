@@ -1,0 +1,25 @@
+{
+  "name": "x3map",
+  "version": "1.0.0",
+  "description": "Interactive map for X3 games.",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reimashi/x3map.git"
+  },
+  "authors": [
+    "Aitor González Fernández <reimashi@gmail.com>"
+  ],
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Reimashi/x3map/issues"
+  },
+  "homepage": "https://github.com/Reimashi/x3map#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tsd": "0.0.4",
+    "gulp-typescript": "^2.9.2"
+  }
+}

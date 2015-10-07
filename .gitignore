@@ -196,5 +196,8 @@ FakesAssemblies/
 *.opt
 
 # Typescript compilation
-*.js
-*.js.map
+script/typings
+script/**/*.js
+script/**/*.js.map
+
+build
