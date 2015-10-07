@@ -1,4 +1,8 @@
-﻿///<reference path="./Lang/EventHandler.ts"/>
+/* JS type wrappers */
+///<reference path="./typings/tsd.d.ts"/>
+
+/* X3Map references */
+///<reference path="./Lang/EventHandler.ts"/>
 ///<reference path="./Lang/Event.ts"/>
 
 ///<reference path="./Scenes/Scene.ts"/>
