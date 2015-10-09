@@ -1,20 +1,15 @@
 ﻿module X3Map {
-    export class SectorScene implements Scene {
-        private renderer: THREE.WebGLRenderer;
-
-        private scene: THREE.Scene;
-        private camera: THREE.Camera;
+    export class SectorScene extends Scene {
         private controls: THREE.OrbitControls;
 
         private data: SectorMap;
 
-        constructor(render: THREE.WebGLRenderer, map: SectorMap) {
+        constructor(container: HTMLElement, map: SectorMap, width?: number, height?: number) {
+            super(container, width, height);
+
             this.data = map;
-            this.renderer = render;
 
-            this.scene = new THREE.Scene();
-
-            this.camera = new THREE.PerspectiveCamera(60, 1, 1, 1000); // FIXME?
+            this.camera = new THREE.PerspectiveCamera(60, 1, 10, 1000); // FIXME?
             this.camera.position.z = 500;
 
             this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
@@ -28,14 +23,14 @@
             });
         }
 
-        public animate() {
+        protected Animate() {
         }
 
-        public render() {
-            this.renderer.render(this.scene, this.camera);
+        protected Render() {
         }
 
-        public resize(width: number, height: number) {
+        public Resize(width: number, height: number) {
+            super.Resize(width, height);
             this.camera.updateMatrix();
         }
 
