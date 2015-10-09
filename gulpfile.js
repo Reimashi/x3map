@@ -25,7 +25,7 @@ gulp.task('compilets', function () {
     return tsresult.js
         .pipe(concat(script_name))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('public'));
+        .pipe(gulp.dest('build'));
 });
 
 gulp.watch('script/**/*.ts', ['compilets']);
