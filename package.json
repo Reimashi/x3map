@@ -1,20 +1,20 @@
 {
-  "name": "x3map",
+  "name": "xut",
   "version": "1.0.0",
-  "description": "Interactive map for X3 games.",
+  "description": "Interactive web tools for X games from Egosoft.",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Reimashi/x3map.git"
+    "url": "https://github.com/Reimashi/xut.git"
   },
   "authors": [
     "Aitor González Fernández <reimashi@gmail.com>"
   ],
   "license": "AGPL-3.0",
   "bugs": {
-    "url": "https://github.com/Reimashi/x3map/issues"
+    "url": "https://github.com/Reimashi/xut/issues"
   },
-  "homepage": "https://github.com/Reimashi/x3map#readme",
+  "homepage": "https://github.com/Reimashi/xut#readme",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",

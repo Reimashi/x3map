@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
-var script_name = "x3map.js";
+var script_name = "xut.js";
 
 gulp.task('download-deps', function (callback) {
   var tsd = require('gulp-tsd');
