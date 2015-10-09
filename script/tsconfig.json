@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "out": "../build/xut.js",
+        "sourceMap": true
+    },
+    "files": [
+        "XUniverseTools.ts",
+        "Data/Asteroid.ts",
+        "Data/MapObject3D.ts",
+        "Data/MapObject.ts",
+        "Data/MapObjectType.ts",
+        "Data/SectorMap.ts",
+        "Data/SpaceShip.ts",
+        "Data/Station.ts",
+        "Data/UniverseMap.ts",
+        "Lang/Event.ts",
+        "Lang/EventHandler.ts",
+        "Scenes/Scene.ts",
+        "Scenes/SectorScene.ts"
+    ]
+}
