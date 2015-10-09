@@ -1,5 +1,5 @@
 /* JS type wrappers */
-///<reference path="./typings/tsd.d.ts"/>
+///<reference path="../typings/tsd.d.ts"/>
 
 /* X3Map references */
 ///<reference path="./Lang/EventHandler.ts"/>
