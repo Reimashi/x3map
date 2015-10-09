@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <title>X Universe Tools</title>
+    <style>
+      body { padding-top: 70px; }
+    </style>
     <script src="thirdparty/jquery/dist/jquery.js"></script>
-    <script src="thirdparty/materialize/dist/js/materialize.js"></script>
     <script src="thirdparty/three.js/build/three.js"></script>
     <script src="thirdparty/three.js/examples/fonts/droid/droid_sans_regular.typeface.js"></script>
     <script src="thirdparty/three.js/examples/js/controls/OrbitControls.js"></script>
@@ -13,44 +15,47 @@
     <script src="thirdparty/angular/angular.js"></script>
     <script src="thirdparty/angular-route/angular-route.js"></script>
     <script src="xut-angular.js"></script>
-    <script>
-
-    var loaded = false;
-    var insertConsole = function(text) {
-      if (loaded) {
-        var d1 = document.getElementById('console');
-        d1.insertAdjacentHTML('beforeend', '<div>' + text + '</div>');
-      }
-    }
-
-    var injectConsole = function(){
-        var oldLog = console.log;
-        console.log = function (message) {
-            insertConsole(message);
-            oldLog.apply(console, arguments);
-        };
-    }
-
-    injectConsole();
-
-    window.onload = function () {
-      var el = document.getElementById('content');
-
-      var map = new X3Map.SectorMap("Menelaus");
-      var x3 = new X3Map.SectorScene(el, map);
-      x3.Start();
-      console.log("X3 Started");
-    };
-    </script>
-
-  <link rel="stylesheet" href="thirdparty/materialize/dist/css/materialize.css">
-    <script src="thirdparty/materialize/dist/js/materialize.js"></script>
+    <link rel="stylesheet" href="thirdparty/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="thirdparty/bootstrap/dist/css/bootstrap.css">
+    <script src="thirdparty/bootstrap/dist/js/bootstrap.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
-    <h1>X3AP Map</h1>
-    <div id="render-container" style="border: 1px solid black;">
-        <div id="content" style="width: 600px; height: 480px;"></div>
+  <body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">X Universe Tools</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#"><i class="fa fa-home"></i></a></li>
+            <li><a href="#map"><i class="fa fa-map"></i> Map</a></li>
+            <li><a href="#cdesigner"><i class="fa fa-industry"></i> Complex Designer</a></li>
+            <li><a href="#cdesigner"><i class="fa fa-database"></i> Database</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <br>
+
+    <div class="container" role="main">
     </div>
-    <div id="console" style="border: 1px solid red;"></div>
-</body>
+
+    <footer>
+      <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <p class="navbar-text pull-left">X franchise is a trademark from <a href="http://www.egosoft.com/">Egosoft</a>.</p>
+          <a href="https://github.com/Reimashi/xut" class="navbar-btn btn-primary btn pull-right">
+            <i class="fa fa-github"></i>  Show on GitHub
+          </a>
+      </div>
+    </footer>
+  </body>
 </html>
