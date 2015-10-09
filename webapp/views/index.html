@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>X Universe Tools</title>
+    <script src="thirdparty/jquery/dist/jquery.js"></script>
+    <script src="thirdparty/materialize/dist/js/materialize.js"></script>
+    <script src="thirdparty/three.js/build/three.js"></script>
+    <script src="thirdparty/three.js/examples/fonts/droid/droid_sans_regular.typeface.js"></script>
+    <script src="thirdparty/three.js/examples/js/controls/OrbitControls.js"></script>
+    <script src="xut.js"></script>
+    <script src="thirdparty/angular/angular.js"></script>
+    <script src="thirdparty/angular-route/angular-route.js"></script>
+    <script src="xut-angular.js"></script>
+    <script>
+
+    var loaded = false;
+    var insertConsole = function(text) {
+      if (loaded) {
+        var d1 = document.getElementById('console');
+        d1.insertAdjacentHTML('beforeend', '<div>' + text + '</div>');
+      }
+    }
+
+    var injectConsole = function(){
+        var oldLog = console.log;
+        console.log = function (message) {
+            insertConsole(message);
+            oldLog.apply(console, arguments);
+        };
+    }
+
+    injectConsole();
+
+    window.onload = function () {
+      var el = document.getElementById('content');
+
+      var map = new X3Map.SectorMap("Menelaus");
+      var x3 = new X3Map.SectorScene(el, map);
+      x3.Start();
+      console.log("X3 Started");
+    };
+    </script>
+
+  <link rel="stylesheet" href="thirdparty/materialize/dist/css/materialize.css">
+    <script src="thirdparty/materialize/dist/js/materialize.js"></script>
+</head>
+<body>
+    <h1>X3AP Map</h1>
+    <div id="render-container" style="border: 1px solid black;">
+        <div id="content" style="width: 600px; height: 480px;"></div>
+    </div>
+    <div id="console" style="border: 1px solid red;"></div>
+</body>
+</html>

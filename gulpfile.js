@@ -38,4 +38,14 @@ gulp.task('compilets-angular', function () {
 
 gulp.watch('webapp/angular/**/*.ts', ['compilets-script']);
 
-gulp.task('default', ['compilets-script', 'compilets-angular']);
+gulp.task('compilehtml', function() {
+  var swig = require('gulp-swig');
+
+  gulp.src('webapp/views/index.html')
+    .pipe(swig({ defaults: { cache: false}}))
+    .pipe(gulp.dest('build'))
+});
+
+gulp.watch('webapp/views/**/*.html', ['compilehtml']);
+
+gulp.task('default', ['compilets-script', 'compilets-angular', 'compilehtml']);
