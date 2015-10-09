@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "out": "../../build/xut-angular.js",
+        "sourceMap": true
+    },
+    "files": [
+        "Application.ts",
+        "Config.ts",
+        "Controllers/MainController.ts",
+        "Controllers/MapController.ts"
+    ]
+}
