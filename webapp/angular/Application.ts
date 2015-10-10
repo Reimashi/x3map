@@ -1,24 +1,18 @@
 /* JS type wrappers */
 ///<reference path="../../typings/tsd.d.ts"/>
 
-/* Project references */
-/// <reference path="./Controllers/MapController.ts"/>
-
 module XULAngular {
-  export class Application {
-    private instance: ng.IModule;
+    'use strict';
 
-    constructor() {
-      this.instance = angular.module('xul-app', []);
+    var Modules = [
+        'ngRoute',
+        'ngAnimate'
+    ];
 
-      this.instance.config(Config);
+    var Instance = angular.module('xut-app', Modules);
 
-      this.instance.controller('MainController', MapController);
-      this.instance.controller('MapController', MapController);
-    }
+    Instance.config(($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) => new Config($routeProvider, $locationProvider));
 
-    public get Instance(): ng.IModule {
-      return this.instance;
-    }
-  }
+    Instance.controller('MainController', ['$scope', ($scope: ng.IScope) => new MainController($scope)]);
+    /*Instance.controller('MapController', MapController);*/
 }

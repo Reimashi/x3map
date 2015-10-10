@@ -1,9 +1,10 @@
 
 module XULAngular {
   export class MapController {
-    public static $inject = [
-			'$scope',
-			'$location'
-		];
+      private scope: ng.IScope;
+
+      constructor(scope: ng.IScope) {
+          this.scope = scope;
+      }
   }
 }
