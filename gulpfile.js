@@ -1,5 +1,17 @@
 var gulp = require('gulp');
 
+gulp.task('test-server', function() {
+    var http = require('http');
+    var express = require('express');
+    var app = express();
+
+    app.use(express.static('build'));
+
+    var server = app.listen(80, function () {
+      console.log('Test server listening at http://%s:%s', server.address().address, server.address().port);
+    });
+});
+
 gulp.task('download-deps', function (callback) {
   var tsd = require('gulp-tsd');
   tsd({
@@ -51,4 +63,4 @@ gulp.task('compilehtml', function() {
 
 gulp.watch('webapp/views/**/*.html', ['compilehtml']);
 
-gulp.task('default', ['compilets-script', 'compilets-angular', 'compilehtml']);
+gulp.task('default', ['test-server', 'compilets-script', 'compilets-angular', 'compilehtml']);
