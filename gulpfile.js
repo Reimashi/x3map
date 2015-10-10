@@ -37,17 +37,27 @@ var compileTypescript = function(scriptname, projectdir) {
         .pipe(gulp.dest('build'));
 }
 
+var compileJavascript = function(scriptname, projectdir) {
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify');
+
+    gulp.src(projectdir + '/**/*.js')
+        //.pipe(uglify())
+        .pipe(concat(scriptname))
+        .pipe(gulp.dest('build'));
+}
+
 gulp.task('compilets-script', function () {
   compileTypescript("xut.js", 'script');
 });
 
 gulp.watch('script/**/*.ts', ['compilets-script']);
 
-gulp.task('compilets-angular', function () {
-  compileTypescript("xut-angular.js", 'webapp/angular');
+gulp.task('compilejs-angular', function () {
+  compileJavascript("xut-angular.js", 'webapp/angular');
 });
 
-gulp.watch('webapp/angular/**/*.ts', ['compilets-angular']);
+gulp.watch('webapp/angular/**/*.js', ['compilejs-angular']);
 
 gulp.task('compilehtml', function() {
   var swig = require('gulp-swig');
@@ -63,4 +73,4 @@ gulp.task('compilehtml', function() {
 
 gulp.watch('webapp/views/**/*.html', ['compilehtml']);
 
-gulp.task('default', ['test-server', 'compilets-script', 'compilets-angular', 'compilehtml']);
+gulp.task('default', ['test-server', 'compilets-script', 'compilejs-angular', 'compilehtml']);
